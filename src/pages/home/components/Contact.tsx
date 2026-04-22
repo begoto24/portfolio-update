@@ -90,7 +90,7 @@ export default function Contact() {
               method="POST"
               className="bg-[#111111] border border-[#1e1e1e] rounded-xl p-8"
             >
-              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_captcha" value="true" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio" />
               

@@ -28,9 +28,6 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <img
-              
-              />
               <span className="text-white font-bold text-lg">Royal_Tech</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
