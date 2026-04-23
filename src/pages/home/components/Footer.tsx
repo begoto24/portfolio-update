@@ -104,7 +104,7 @@ export default function Footer() {
           <p className="text-gray-400 text-sm text-center sm:text-left">
             © {new Date().getFullYear()} <strong className="text-gray-400">Royal_Tech</strong>. Tous droits réservés.
           </p>
-          <p className="text-gray-500 text-xs text-center">
+          <p className="text-gray-400 text-xs text-center">
             Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par Royal_Tech
           </p>
         </div>

@@ -58,7 +58,7 @@ export default function About() {
                     <Icon name={item.icon} className="text-sm" />
                   </div>
                   <div>
-                    <p className="text-gray-500 text-xs">{item.label}</p>
+                    <p className="text-gray-400 text-xs">{item.label}</p>
                     <p className="text-white text-sm font-medium">{item.value}</p>
                   </div>
                 </div>

@@ -137,10 +137,10 @@ export default function Portfolio() {
                   href={project.github}
                   target="_blank"
                   rel="nofollow noopener noreferrer"
-                  aria-label="GitHub"
+                  aria-label={project.github.includes('gitlab') ? 'GitLab' : 'GitHub'}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E85D04] text-white hover:bg-[#c94d03] transition-colors cursor-pointer"
                 >
-                  <Icon name="github" className="text-lg" />
+                  <Icon name={project.github.includes('gitlab') ? 'gitlab' : 'github'} className="text-lg" />
                 </a>
                 <a
                   href={project.live}

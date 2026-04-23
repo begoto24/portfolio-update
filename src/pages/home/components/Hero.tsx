@@ -75,13 +75,14 @@ export default function Hero() {
               <div className="absolute inset-0 rounded-full border-4 border-[#E85D04]/30 scale-110 animate-pulse-slow"></div>
               <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#2a2a2a] relative z-10">
                 <img
-                  src="/assets/images/profil.jpg"
+                  src="/assets/images/profil.w800.webp"
                   alt="Royal_Tech - Developer Frontend"
                   className="w-full h-full object-cover object-top"
                   width={384}
                   height={384}
                   fetchPriority="high"
                   loading="eager"
+                  decoding="async"
                 />
               </div>
               {/* Badge */}
