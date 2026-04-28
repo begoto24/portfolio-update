@@ -23,7 +23,7 @@ export default function Hero() {
               I&apos;m Developer{" "}
               <span className="text-[#E85D04]">Frontend</span>
             </h1>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
+            <p className="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
               Passionné de programmation et design, je crée des interfaces intuitives
               et esthétiques. Chaque projet vise une expérience utilisateur fluide et une
               performance optimale, du prototype à la mise en ligne. Bienvenue dans
@@ -60,7 +60,7 @@ export default function Hero() {
                   target="_blank"
                   rel="nofollow noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-400 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-300 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
                 >
                   <Icon name={social.icon} className="text-xl" />
                 </a>
@@ -103,7 +103,7 @@ export default function Hero() {
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="text-3xl font-extrabold text-[#E85D04]">{stat.value}</p>
-              <p className="text-gray-500 text-sm mt-1">{stat.label}</p>
+              <p className="text-gray-400 text-sm mt-1">{stat.label}</p>
             </div>
           ))}
         </div>

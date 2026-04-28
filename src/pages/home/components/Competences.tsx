@@ -85,7 +85,7 @@ export default function Competences() {
           <h2 className="text-4xl font-extrabold text-white mt-3">
             Stack Technique
           </h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-gray-300 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Des technologies frontend modernes aux outils de design, voici mon arsenal pour créer des interfaces performantes et esthétiques.
           </p>
         </div>
@@ -124,12 +124,12 @@ export default function Competences() {
 
         {/* Extra Badges */}
         <div className="mt-12 text-center">
-          <p className="text-gray-500 text-sm mb-4">Également à l&apos;aise avec :</p>
+          <p className="text-gray-400 text-sm mb-4">Également à l&apos;aise avec :</p>
           <div className="flex flex-wrap justify-center gap-3">
             {["Java", "REST API", "Responsive Design", "Accessibilité Web", "SEO", "Performance Web", "Atomic Design", "Component Library"].map((tag) => (
               <span
                 key={tag}
-                className="border border-[#2a2a2a] text-gray-400 text-xs px-4 py-1.5 rounded-full hover:border-[#E85D04] hover:text-[#E85D04] transition-colors duration-200 cursor-default"
+                className="border border-[#2a2a2a] text-gray-300 text-xs px-4 py-1.5 rounded-full hover:border-[#E85D04] hover:text-[#E85D04] transition-colors duration-200 cursor-default"
               >
                 {tag}
               </span>

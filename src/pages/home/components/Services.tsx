@@ -56,7 +56,7 @@ export default function Services() {
             Ce que je fais
           </span>
           <h2 className="text-4xl font-extrabold text-white mt-3">Mes Services</h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-gray-300 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Des solutions frontend complètes pour donner vie à vos projets digitaux, de la conception à la mise en ligne.
           </p>
         </div>
@@ -77,12 +77,12 @@ export default function Services() {
               <h3 className="text-white font-bold text-base mb-3">{service.title}</h3>
 
               {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed mb-5">{service.description}</p>
+              <p className="text-gray-300 text-sm leading-relaxed mb-5">{service.description}</p>
 
               {/* Features */}
               <ul className="space-y-2 mt-auto">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2 text-gray-400 text-sm">
+                  <li key={feature} className="flex items-center gap-2 text-gray-300 text-sm">
                     <Icon name="check" className="text-[#E85D04] text-base" />
                     {feature}
                   </li>
