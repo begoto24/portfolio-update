@@ -10,7 +10,7 @@ const projects = [
     category: "React/Next.js",
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
     image: "/assets/images/project-1.jpg",
-    github: "https://gitlab.com/begoto24",
+    github: "https://gitlab.com/begoto",
     live: "#",
     featured: true,
   },

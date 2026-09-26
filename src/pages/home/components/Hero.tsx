@@ -58,7 +58,7 @@ export default function Hero() {
               {([
                 { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
                 { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
-                { icon: "gitlab", href: "https://gitlab.com/begoto24", label: "GitLab" },
+                { icon: "gitlab", href: "https://gitlab.com/begoto", label: "GitLab" },
               ] as const).map((social) => (
                 <a
                   key={social.label}
