@@ -44,7 +44,7 @@ export default function Contact() {
             Travaillons ensemble
           </span>
           <h2 className="text-4xl font-extrabold text-white mt-3">Contactez-moi</h2>
-          <p className="text-gray-400 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
+          <p className="text-gray-300 mt-4 max-w-xl mx-auto text-sm leading-relaxed">
             Un projet en tête ? Une collaboration à envisager ? N&apos;hésitez pas à me contacter, je réponds rapidement.
           </p>
         </div>
@@ -93,9 +93,9 @@ export default function Contact() {
                   <Icon name={item.icon} className="text-xl" />
                 </div>
                 <div>
-                  <p className="text-gray-400 text-xs">{item.title}</p>
+                  <p className="text-gray-300 text-xs">{item.title}</p>
                   <p className="text-white text-sm font-semibold mt-0.5">{item.value}</p>
-                  <p className="text-gray-400 text-xs mt-0.5">{item.sub}</p>
+                  <p className="text-gray-300 text-xs mt-0.5">{item.sub}</p>
                 </div>
               </a>
             ))}
@@ -113,7 +113,7 @@ export default function Contact() {
                   target="_blank"
                   rel="me noopener noreferrer"
                   aria-label={s.label}
-                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-400 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
+                  className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-300 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
                 >
                   <Icon name={s.icon} className="text-xl" />
                 </a>
@@ -212,7 +212,7 @@ export default function Contact() {
                   className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-md px-4 py-3 text-sm text-white placeholder-gray-600 focus:outline-none focus:border-[#E85D04] transition-colors duration-200 resize-none"
                 />
                 <div className="flex justify-end mt-1">
-                  <span className={`text-xs ${charCount > 480 ? "text-[#E85D04]" : "text-gray-400"}`}>
+                  <span className={`text-xs ${charCount > 480 ? "text-[#E85D04]" : "text-gray-300"}`}>
                     {charCount}/500
                   </span>
                 </div>

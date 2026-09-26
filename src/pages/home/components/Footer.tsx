@@ -30,7 +30,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <span className="text-white font-bold text-lg">Royal_Tech</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
+            <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               Développeur Frontend passionné, je crée des interfaces web modernes et performantes. Chaque projet est une nouvelle aventure créative.
             </p>
             <div className="flex gap-3 mt-5">
@@ -41,7 +41,7 @@ export default function Footer() {
                   target="_blank"
                   rel="me noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1e1e1e] text-gray-400 hover:bg-[#E85D04] hover:text-white transition-all duration-200 cursor-pointer"
+                  className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1e1e1e] text-gray-300 hover:bg-[#E85D04] hover:text-white transition-all duration-200 cursor-pointer"
                 >
                   <Icon name={s.icon} className="text-base" />
                 </a>
@@ -59,7 +59,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <button
                     onClick={() => scrollTo(link.href)}
-                    className="text-gray-400 text-sm hover:text-[#E85D04] hover:translate-x-1 transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-1"
+                    className="text-gray-300 text-sm hover:text-[#E85D04] hover:translate-x-1 transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center gap-1"
                   >
                     <Icon name="link" className="text-xs" />
                     {link.label}
@@ -82,7 +82,7 @@ export default function Footer() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="bg-[#1e1e1e] text-gray-400 text-xs px-3 py-1 rounded-full whitespace-nowrap hover:text-[#E85D04] transition-colors duration-150 cursor-default"
+                  className="bg-[#1e1e1e] text-gray-300 text-xs px-3 py-1 rounded-full whitespace-nowrap hover:text-[#E85D04] transition-colors duration-150 cursor-default"
                 >
                   {tech}
                 </span>
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
 
             <div className="mt-6 p-4 bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl">
-              <p className="text-gray-400 text-xs mb-1">Statut actuel</p>
+              <p className="text-gray-300 text-xs mb-1">Statut actuel</p>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block"></span>
                 <span className="text-white text-sm font-medium">Disponible pour des projets</span>
@@ -101,10 +101,10 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-[#1e1e1e] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} <strong className="text-gray-400">Royal_Tech</strong>. Tous droits réservés.
+          <p className="text-gray-300 text-sm text-center sm:text-left">
+            © {new Date().getFullYear()} <strong className="text-gray-300">Royal_Tech</strong>. Tous droits réservés.
           </p>
-          <p className="text-gray-500 text-xs text-center">
+          <p className="text-gray-300 text-xs text-center">
             Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par Royal_Tech
           </p>
         </div>
