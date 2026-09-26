@@ -1,6 +1,10 @@
 
 import { Icon } from "@/components/Icon";
 
+const WHATSAPP_URL =
+  "https://wa.me/237688084974?text=" +
+  encodeURIComponent("Bonjour, je viens de votre portfolio et j'aimerais discuter d'un projet.");
+
 export default function Hero() {
   const scrollTo = (href: string) => {
     const el = document.querySelector(href);
@@ -31,13 +35,15 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
-              <button
-                onClick={() => scrollTo("#contact")}
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 bg-[#E85D04] hover:bg-[#c94d03] text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"
               >
                 <Icon name="whatsapp" className="text-lg" />
                 Contactez moi
-              </button>
+              </a>
               <button
                 onClick={() => scrollTo("#competences")}
                 className="flex items-center gap-2 border border-[#E85D04] text-[#E85D04] hover:bg-[#E85D04] hover:text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"
@@ -51,14 +57,14 @@ export default function Hero() {
             <div className="flex gap-4">
               {([
                 { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
-                { icon: "linkedin", href: "https://linkedin.com/feed/", label: "LinkedIn" },
+                { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
                 { icon: "gitlab", href: "https://gitlab.com/begoto24", label: "GitLab" },
               ] as const).map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="me noopener noreferrer"
                   aria-label={social.label}
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-400 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
                 >

@@ -1,15 +1,13 @@
 /* Security Headers for Netlify */
 
 # CSP - Content Security Policy
-# Allows: local resources, formsubmit.co
+# Allows: local resources (Netlify Forms posts to same origin)
 /
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://formsubmit.co; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
 
 # COOP - Cross-Origin-Opener-Policy
   Cross-Origin-Opener-Policy: same-origin
 
-# COEP - Cross-Origin-Embedder-Policy
-  Cross-Origin-Embedder-Policy: require-corp
 
 # X-Frame-Options - Clickjacking protection
   X-Frame-Options: DENY

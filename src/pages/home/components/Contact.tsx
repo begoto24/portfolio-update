@@ -1,8 +1,39 @@
 import { Icon } from "@/components/Icon";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+
+const WHATSAPP_URL =
+  "https://wa.me/237688084974?text=" +
+  encodeURIComponent("Bonjour, je viens de votre portfolio et j'aimerais discuter d'un projet.");
+
+type Status = "idle" | "sending" | "success" | "error";
 
 export default function Contact() {
   const [charCount, setCharCount] = useState(0);
+  const [status, setStatus] = useState<Status>("idle");
+
+  // Envoi via Netlify Forms : le formulaire "contact" est aussi déclaré dans index.html
+  // pour être détecté au build ; les notifications email se règlent dans Netlify.
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    try {
+      const data = new FormData(form);
+      const body = new URLSearchParams();
+      data.forEach((value, key) => body.append(key, String(value)));
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      form.reset();
+      setCharCount(0);
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
 
   return (
     <section id="contact" className="bg-[#0f0f0f] py-24">
@@ -27,28 +58,35 @@ export default function Contact() {
                 title: "Email",
                 value: "begotostofil@gmail.com",
                 sub: "Réponse sous 24h",
+                href: "mailto:begotostofil@gmail.com",
               },
               {
                 icon: "whatsapp",
                 title: "WhatsApp",
                 value: "+237 688 084 974",
-                sub: "Disponible en semaine",
+                sub: "Cliquez pour m'écrire sur WhatsApp",
+                href: WHATSAPP_URL,
               },
               {
                 icon: "mapPin",
                 title: "Localisation",
                 value: "Yaoundé, Cameroun",
                 sub: "Disponible en remote",
+                href: undefined,
               },
               {
                 icon: "briefcase",
                 title: "Disponibilité",
                 value: "Freelance / CDI",
                 sub: "Ouvert aux opportunités",
+                href: undefined,
               },
             ] as const).map((item) => (
-              <div
+              <a
                 key={item.title}
+                href={item.href}
+                target={item.href?.startsWith("http") ? "_blank" : undefined}
+                rel={item.href?.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="flex items-start gap-4 bg-[#111111] border border-[#1e1e1e] rounded-xl p-5 hover:border-[#E85D04]/40 transition-colors duration-200"
               >
                 <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#E85D04]/10 text-[#E85D04] flex-shrink-0">
@@ -59,21 +97,21 @@ export default function Contact() {
                   <p className="text-white text-sm font-semibold mt-0.5">{item.value}</p>
                   <p className="text-gray-400 text-xs mt-0.5">{item.sub}</p>
                 </div>
-              </div>
+              </a>
             ))}
 
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
               {([
                 { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
-                { icon: "linkedin", href: "https://linkedin.com/feed/", label: "LinkedIn" },
+                { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
                 { icon: "gitlab", href: "https://gitlab.com/begoto24", label: "GitLab" },
               ] as const).map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="me noopener noreferrer"
                   aria-label={s.label}
                   className="w-10 h-10 flex items-center justify-center rounded-full border border-[#2a2a2a] text-gray-400 hover:border-[#E85D04] hover:text-[#E85D04] transition-all duration-200 cursor-pointer"
                 >
@@ -83,16 +121,22 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Form - Version simple avec redirection */}
+          {/* Form - Netlify Forms */}
           <div className="flex-1">
             <form
-              action="https://formsubmit.co/begotostofil@gmail.com"
+              name="contact"
               method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              onSubmit={handleSubmit}
               className="bg-[#111111] border border-[#1e1e1e] rounded-xl p-8"
             >
-              <input type="hidden" name="_captcha" value="true" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_subject" value="Nouveau message depuis votre portfolio" />
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  Ne pas remplir : <input name="bot-field" />
+                </label>
+              </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-5">
                 <div>
@@ -176,11 +220,27 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full bg-[#E85D04] hover:bg-[#c94d03] text-white font-bold py-3.5 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center justify-center gap-2"
+                disabled={status === "sending"}
+                className="w-full bg-[#E85D04] hover:bg-[#c94d03] disabled:opacity-60 disabled:cursor-wait text-white font-bold py-3.5 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap flex items-center justify-center gap-2"
               >
                 <Icon name="send" className="text-base" />
-                Envoyer le message
+                {status === "sending" ? "Envoi en cours..." : "Envoyer le message"}
               </button>
+
+              {status === "success" && (
+                <p role="status" className="mt-4 text-sm text-green-400 text-center">
+                  Merci ! Votre message a bien été envoyé, je vous réponds rapidement.
+                </p>
+              )}
+              {status === "error" && (
+                <p role="alert" className="mt-4 text-sm text-red-400 text-center">
+                  L&apos;envoi a échoué. Réessayez ou écrivez-moi directement sur{" "}
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="underline text-[#E85D04]">
+                    WhatsApp
+                  </a>
+                  .
+                </p>
+              )}
             </form>
           </div>
         </div>

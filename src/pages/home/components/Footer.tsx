@@ -11,7 +11,7 @@ const navLinks = [
 
 const socials = [
   { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
-  { icon: "linkedin", href: "https://linkedin.com/feed/", label: "LinkedIn" },
+  { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
   { icon: "gitlab", href: "https://gitlab.com/begoto24", label: "GitLab" },
 ] as const;
 
@@ -39,7 +39,7 @@ export default function Footer() {
                   key={s.label}
                   href={s.href}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="me noopener noreferrer"
                   aria-label={s.label}
                   className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1e1e1e] text-gray-400 hover:bg-[#E85D04] hover:text-white transition-all duration-200 cursor-pointer"
                 >
