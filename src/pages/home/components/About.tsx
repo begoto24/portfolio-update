@@ -21,13 +21,13 @@ export default function About() {
                 type="button"
                 onClick={() => setFlipped((f) => !f)}
                 aria-pressed={flipped}
-                aria-label={flipped ? "Voir la photo de profil" : "Voir Begoto en présentation de projet"}
+                aria-label={flipped ? "Voir la photo de profil" : "Voir BegotoDev en présentation de projet"}
                 className="flip-card group relative z-10 block w-full h-full cursor-pointer rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E85D04]"
               >
                 <div className={`flip-card-inner ${flipped ? "is-flipped" : ""}`}>
                   <img
                     src="/assets/images/about.w800.webp"
-                    alt="Begoto, développeur frontend"
+                    alt="BegotoDev, développeur frontend"
                     className="flip-card-face w-full h-full object-cover object-top rounded-xl"
                     width={320}
                     height={380}
@@ -37,7 +37,7 @@ export default function About() {
                   <div className="flip-card-face flip-card-back rounded-xl overflow-hidden">
                     <img
                       src="/assets/images/stofilajout.w800.webp"
-                      alt="Begoto présentant un tableau de bord de gestion scolaire qu'il a développé"
+                      alt="BegotoDev présentant un tableau de bord de gestion scolaire qu'il a développé"
                       className="w-full h-full object-cover object-center"
                       width={320}
                       height={380}
@@ -66,59 +66,86 @@ export default function About() {
           {/* Right - Content */}
           <div className="flex-1">
             <span className="text-[#E85D04] text-sm font-semibold uppercase tracking-widest">
-              À Propos de Moi
+              À propos de moi
             </span>
-            <h2 className="text-4xl font-extrabold text-white mt-3 mb-5">
-              Développeur Frontend{" "}
-              <span className="text-[#E85D04]">Passionné</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-3 mb-5">
+              Pourquoi travailler <span className="text-[#E85D04]">avec moi ?</span>
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Je suis un développeur frontend passionné, spécialisé dans la création d&apos;interfaces web modernes et performantes. Avec une solide maîtrise de React, Next.js et TypeScript, je transforme des idées en expériences digitales engageantes.
+            <p className="text-gray-300 text-base leading-relaxed mb-4">
+              Mon parcours n&apos;est pas classique : après une licence en langue et civilisation
+              anglaises, j&apos;ai choisi le développement web par passion. Depuis, je construis des
+              interfaces utilisées par de vrais utilisateurs, comme le tableau de bord de gestion
+              scolaire que je présente sur la photo (retournez-la pour le voir).
             </p>
             <p className="text-gray-400 text-sm leading-relaxed mb-8">
-              Mon approche combine la technique et l&apos;esthétique. Je maîtrise les outils de design comme Figma pour prototyper avant de coder, et j&apos;utilise les librairies modernes (TailwindCSS, Shadcn/UI, Ant Design) pour livrer des interfaces pixel-perfect.
+              Mon objectif est simple : que votre site soit beau, rapide, et que vos visiteurs
+              trouvent en quelques secondes ce qu&apos;ils cherchent.
             </p>
 
-            {/* Key Points */}
+            {/* Arguments */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               {([
-                { icon: "mapPin", label: "Localisation", value: "Yaoundé" },
-                { icon: "mail", label: "Email", value: "begotostofil@gmail.com" },
-                { icon: "briefcase", label: "Statut", value: "Disponible en freelance" },
-                { icon: "graduation", label: "Niveau", value: "Développeur Junior/Mid" },
+                {
+                  icon: "globe",
+                  title: "Bilingue français / anglais",
+                  text: "Je travaille avec des clients francophones et anglophones, en Afrique comme à l'international.",
+                },
+                {
+                  icon: "paintbrush",
+                  title: "Du design au code",
+                  text: "Je maquette sur Figma avant de coder : vous validez le rendu avant le développement.",
+                },
+                {
+                  icon: "zap",
+                  title: "Des sites rapides",
+                  text: "Pages légères et optimisées, qui chargent vite même sur une connexion mobile.",
+                },
+                {
+                  icon: "message",
+                  title: "Communication directe",
+                  text: "Réponse sous 24h et suivi régulier sur WhatsApp, sans jargon technique.",
+                },
               ] as const).map((item) => (
-                <div key={item.label} className="flex items-start gap-3">
-                  <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-[#E85D04]/10 text-[#E85D04] flex-shrink-0 mt-0.5">
-                    <Icon name={item.icon} className="text-sm" />
+                <div
+                  key={item.title}
+                  className="bg-[#111111] border border-[#1e1e1e] hover:border-[#E85D04]/40 rounded-xl p-4 transition-colors duration-200"
+                >
+                  <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-[#E85D04]/10 text-[#E85D04] mb-3">
+                    <Icon name={item.icon} className="text-base" />
                   </div>
-                  <div>
-                    <p className="text-gray-400 text-xs">{item.label}</p>
-                    <p className="text-white text-sm font-medium">{item.value}</p>
-                  </div>
+                  <p className="text-white text-sm font-semibold mb-1">{item.title}</p>
+                  <p className="text-gray-400 text-xs leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
 
-            {/* Tech I Love */}
-            <div className="mb-8">
-              <p className="text-gray-400 text-sm mb-3">Technologies que j&apos;adore :</p>
-              <div className="flex flex-wrap gap-2">
-                {["React", "Next.js", "TypeScript", "TailwindCSS", "Figma", "Git"].map((tech) => (
-                  <span
-                    key={tech}
-                    className="bg-[#E85D04]/10 border border-[#E85D04]/20 text-[#E85D04] text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+            {/* Infos */}
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8 text-sm text-gray-300">
+              <span className="flex items-center gap-2">
+                <Icon name="mapPin" className="text-[#E85D04]" /> Yaoundé, disponible en remote
+              </span>
+              <span className="flex items-center gap-2">
+                <Icon name="briefcase" className="text-[#E85D04]" /> Freelance ou CDI
+              </span>
+            </div>
+
+            {/* Technologies */}
+            <div className="flex flex-wrap gap-2 mb-8">
+              {["React", "Next.js", "TypeScript", "TailwindCSS", "Figma", "Git"].map((tech) => (
+                <span
+                  key={tech}
+                  className="bg-[#E85D04]/10 border border-[#E85D04]/20 text-[#E85D04] text-xs font-medium px-3 py-1 rounded-full whitespace-nowrap"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
 
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
               <a
                 href="/cv-begoto.pdf"
-                download="CV-Begoto-Developpeur-Frontend.pdf"
+                download="CV-BegotoDev-Developpeur-Frontend.pdf"
                 className="flex items-center gap-2 bg-[#E85D04] hover:bg-[#c94d03] text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"
               >
                 <Icon name="download" className="text-base" />

@@ -20,7 +20,7 @@ const projects = [
     category: "Landing Page",
     tags: ["HTML", "CSS", "JS"],
     image: "/assets/images/project-2.jpg",
-    github: "https://github.com/begoto24",
+    github: "https://github.com/begoto",
     live: "",
     featured: false,
   },
@@ -30,7 +30,7 @@ const projects = [
     category: "Full Stack",
     tags: ["CSS", "HTML", "JS"],
     image: "/assets/images/project-3.jpg",
-    github: "https://github.com/begoto24",
+    github: "https://github.com/begoto",
     live: "",
     featured: true,
   },
@@ -40,7 +40,7 @@ const projects = [
     category: "Landing Page",
     tags: ["React", "TailwindCSS", "Shadcn/UI"],
     image: "/assets/images/project-4.jpg",
-    github: "https://github.com/begoto24",
+    github: "https://github.com/begoto",
     live: "https://flashcards-en-stofil.netlify.app/",
     featured: false,
   },
@@ -50,7 +50,7 @@ const projects = [
     category: "UI Design",
     tags: ["Nextjs", "Shadcn", "json-server"],
     image: "/assets/images/project-5.jpg",
-    github: "https://github.com/begoto24",
+    github: "https://github.com/begoto",
     live: "",
     featured: false,
   },
@@ -60,7 +60,7 @@ const projects = [
     category: "React/Next.js",
     tags: ["Next.js", "postgresql", "Nodejs"],
     image: "/assets/images/project-6.jpg",
-    github: "https://github.com/begoto24",
+    github: "https://github.com/begoto",
     live: "",
     featured: false,
   },
@@ -183,7 +183,7 @@ export default function Portfolio() {
         {/* View More */}
         <div className="text-center mt-10">
           <a
-            href="https://github.com/begoto24"
+            href="https://github.com/begoto"
             target="_blank"
             rel="me noopener noreferrer"
             className="inline-flex items-center gap-2 border border-[#E85D04] text-[#E85D04] hover:bg-[#E85D04] hover:text-white font-semibold px-8 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"

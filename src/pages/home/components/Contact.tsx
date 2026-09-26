@@ -103,7 +103,7 @@ export default function Contact() {
             {/* Social Links */}
             <div className="flex gap-3 pt-2">
               {([
-                { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
+                { icon: "github", href: "https://github.com/begoto", label: "GitHub" },
                 { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
                 { icon: "gitlab", href: "https://gitlab.com/begoto", label: "GitLab" },
               ] as const).map((s) => (

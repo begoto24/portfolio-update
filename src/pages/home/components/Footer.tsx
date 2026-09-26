@@ -1,16 +1,16 @@
 import { Icon } from "@/components/Icon";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
+  { label: "Accueil", href: "#home" },
   { label: "Compétences", href: "#competences" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
+  { label: "Projets", href: "#portfolio" },
+  { label: "À propos", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
 
 const socials = [
-  { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
+  { icon: "github", href: "https://github.com/begoto", label: "GitHub" },
   { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
   { icon: "gitlab", href: "https://gitlab.com/begoto", label: "GitLab" },
 ] as const;
@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-white font-bold text-lg">Begoto</span>
+              <span className="text-white font-bold text-lg">Begoto<span className="text-[#E85D04]">Dev</span></span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               Développeur Frontend passionné, je crée des interfaces web modernes et performantes. Chaque projet est une nouvelle aventure créative.
@@ -102,10 +102,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[#1e1e1e] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-300 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} <strong className="text-gray-300">Begoto</strong>. Tous droits réservés.
+            © {new Date().getFullYear()} <strong className="text-gray-300">BegotoDev</strong>. Tous droits réservés.
           </p>
           <p className="text-gray-300 text-xs text-center">
-            Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par Begoto
+            Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par BegotoDev
           </p>
         </div>
       </div>

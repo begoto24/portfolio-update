@@ -62,3 +62,8 @@
     }
   }
 }
+
+/* Les titres de section ne passent plus sous le menu fixe */
+section[id] {
+  scroll-margin-top: 80px;
+}

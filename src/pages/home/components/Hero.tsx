@@ -14,24 +14,26 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#0a0a0a] flex items-center pt-16"
+      className="min-h-screen bg-[#0a0a0a] flex items-center pt-20 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full py-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Left Content */}
-          <div className="flex-1 max-w-xl">
-            <p className="text-[#E85D04] font-semibold text-sm uppercase tracking-widest mb-3 animate-fade-in">
-              Bonjour, je suis Begoto
-            </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              Développeur{" "}
-              <span className="text-[#E85D04]">Frontend</span>
+          <div className="flex-1 w-full max-w-xl">
+            <span className="inline-flex items-center gap-2 bg-[#E85D04]/10 border border-[#E85D04]/30 text-[#E85D04] text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              Disponible pour de nouveaux projets
+            </span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] mb-4 animate-fade-in">
+              Bonjour, je suis <span className="text-[#E85D04] whitespace-nowrap">BegotoDev</span>
             </h1>
-            <p className="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
-              Passionné de programmation et design, je crée des interfaces intuitives
-              et esthétiques. Chaque projet vise une expérience utilisateur fluide et une
-              performance optimale, du prototype à la mise en ligne. Bienvenue dans
-              mon univers où chaque pixel et chaque ligne de code ont leur importance.
+            <p className="text-xl sm:text-2xl font-semibold text-gray-200 mb-6">
+              Développeur Frontend React &amp; Next.js
+            </p>
+            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-md">
+              Je conçois des sites et applications web modernes, rapides et faciles à utiliser,
+              du maquettage Figma jusqu&apos;à la mise en ligne. Basé à Yaoundé, je travaille
+              en français et en anglais, avec des clients partout dans le monde.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-10">
@@ -56,7 +58,7 @@ export default function Hero() {
             {/* Social Icons */}
             <div className="flex gap-4">
               {([
-                { icon: "github", href: "https://github.com/begoto24", label: "GitHub" },
+                { icon: "github", href: "https://github.com/begoto", label: "GitHub" },
                 { icon: "linkedin", href: "https://www.linkedin.com/in/stofil-begoto-047753345/", label: "LinkedIn" },
                 { icon: "gitlab", href: "https://gitlab.com/begoto", label: "GitLab" },
               ] as const).map((social) => (
@@ -82,7 +84,7 @@ export default function Hero() {
               <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#2a2a2a] relative z-10">
                 <img
                   src="/assets/images/profil.w800.webp"
-                  alt="Begoto, développeur frontend à Yaoundé"
+                  alt="BegotoDev, développeur frontend à Yaoundé"
                   className="w-full h-full object-cover object-top"
                   width={384}
                   height={384}

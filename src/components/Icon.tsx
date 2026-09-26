@@ -12,6 +12,7 @@ import {
     Flower,
     GitBranch,
     Github,
+    Globe,
     GraduationCap,
     Image,
     Layers,
@@ -28,6 +29,7 @@ import {
     ShieldCheck,
     Smartphone,
     X,
+    Zap,
 } from 'lucide-react';
 import type { SVGProps } from 'react';
 
@@ -49,6 +51,8 @@ const icons = {
   brush: Paintbrush,
   paintbrush: Paintbrush,
   refresh: RotateCw,
+  globe: Globe,
+  zap: Zap,
   smartphone: Smartphone,
   gitBranch: GitBranch,
   shield: ShieldCheck,
