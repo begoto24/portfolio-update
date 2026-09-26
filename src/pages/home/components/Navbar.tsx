@@ -38,7 +38,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
         {/* Logo */}
         <a href="#home" onClick={() => handleNavClick("Home", "#home")} className="flex items-center gap-2 cursor-pointer">
-          <span className="text-white font-bold text-xl tracking-wide">Royal_Tech</span>
+          <span className="text-white font-bold text-xl tracking-wide">Begoto</span>
         </a>
 
         {/* Desktop Nav */}

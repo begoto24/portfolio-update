@@ -42,6 +42,7 @@ const IMAGE_SPECS = {
   'project-1.jpg': { maxWidth: 1000, name: 'E-School' },
   'project-6.jpg': { maxWidth: 1400, name: 'Auth-G-email' },
   'about.jpg': { maxWidth: 800, name: 'About' },
+  'stofilajout.jpeg': { maxWidth: 800, name: 'About - en presentation' },
 };
 
 async function optimizeImage(filename) {

@@ -1,7 +1,10 @@
 
 import { Icon } from "@/components/Icon";
+import { useState } from "react";
 
 export default function About() {
+  const [flipped, setFlipped] = useState(false);
+
   return (
     <section id="about" className="bg-[#0a0a0a] py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -12,21 +15,52 @@ export default function About() {
               {/* Decorative elements */}
               <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#E85D04]/30 rounded-xl"></div>
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-[#E85D04]/10 rounded-xl"></div>
-              <img
-                src="/assets/images/about.jpg"
-                alt="À propos de moi - Royal_Tech"
-                className="w-full h-full object-cover object-top rounded-xl relative z-10"
-                width={320}
-                height={380}
-                loading="lazy"
-                decoding="async"
-              />
+
+              {/* Carte qui se retourne : survol sur ordinateur, toucher sur mobile */}
+              <button
+                type="button"
+                onClick={() => setFlipped((f) => !f)}
+                aria-pressed={flipped}
+                aria-label={flipped ? "Voir la photo de profil" : "Voir Begoto en présentation de projet"}
+                className="flip-card group relative z-10 block w-full h-full cursor-pointer rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E85D04]"
+              >
+                <div className={`flip-card-inner ${flipped ? "is-flipped" : ""}`}>
+                  <img
+                    src="/assets/images/about.w800.webp"
+                    alt="Begoto, développeur frontend"
+                    className="flip-card-face w-full h-full object-cover object-top rounded-xl"
+                    width={320}
+                    height={380}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div className="flip-card-face flip-card-back rounded-xl overflow-hidden">
+                    <img
+                      src="/assets/images/stofilajout.w800.webp"
+                      alt="Begoto présentant un tableau de bord de gestion scolaire qu'il a développé"
+                      className="w-full h-full object-cover object-center"
+                      width={320}
+                      height={380}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent pt-10 pb-4 px-4 text-left text-white text-xs font-medium">
+                      En présentation d&apos;un projet client
+                    </p>
+                  </div>
+                </div>
+              </button>
+
               {/* Experience badge */}
-              <div className="absolute -bottom-5 -right-5 z-20 bg-[#C54B03] text-white rounded-xl p-4 text-center">
+              <div className="absolute -bottom-5 -right-5 z-20 bg-[#C54B03] text-white rounded-xl p-4 text-center pointer-events-none">
                 <p className="text-2xl font-extrabold leading-none">1+</p>
                 <p className="text-xs mt-0.5 whitespace-nowrap">Ans d&apos;exp.</p>
               </div>
             </div>
+            <p className="mt-8 text-center text-gray-500 text-xs flex items-center justify-center gap-1.5">
+              <Icon name="refresh" className="text-sm text-[#E85D04]" />
+              Survolez ou touchez la photo
+            </p>
           </div>
 
           {/* Right - Content */}
@@ -83,8 +117,8 @@ export default function About() {
             {/* CTA */}
             <div className="flex flex-wrap gap-4">
               <a
-                href="/cv-royal-tech.pdf"
-                download
+                href="/cv-begoto.pdf"
+                download="CV-Begoto-Developpeur-Frontend.pdf"
                 className="flex items-center gap-2 bg-[#E85D04] hover:bg-[#c94d03] text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"
               >
                 <Icon name="download" className="text-base" />

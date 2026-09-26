@@ -7,3 +7,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Carte photo "À propos" qui se retourne */
+@layer components {
+  .flip-card {
+    perspective: 1200px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+  .flip-card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  .flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  @media (hover: hover) {
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card:hover .flip-card-inner.is-flipped {
+      transform: rotateY(0deg);
+    }
+  }
+  /* Sans animation pour ceux qui l'ont désactivée : simple fondu */
+  @media (prefers-reduced-motion: reduce) {
+    .flip-card-inner,
+    .flip-card:hover .flip-card-inner,
+    .flip-card-inner.is-flipped {
+      transform: none;
+      transition: none;
+    }
+    .flip-card-back {
+      transform: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .flip-card-inner.is-flipped .flip-card-back {
+      opacity: 1;
+    }
+    @media (hover: hover) {
+      .flip-card:hover .flip-card-back {
+        opacity: 1;
+      }
+    }
+  }
+}

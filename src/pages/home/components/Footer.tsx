@@ -28,7 +28,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <span className="text-white font-bold text-lg">Royal_Tech</span>
+              <span className="text-white font-bold text-lg">Begoto</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed max-w-xs">
               Développeur Frontend passionné, je crée des interfaces web modernes et performantes. Chaque projet est une nouvelle aventure créative.
@@ -102,10 +102,10 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-[#1e1e1e] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-gray-300 text-sm text-center sm:text-left">
-            © {new Date().getFullYear()} <strong className="text-gray-300">Royal_Tech</strong>. Tous droits réservés.
+            © {new Date().getFullYear()} <strong className="text-gray-300">Begoto</strong>. Tous droits réservés.
           </p>
           <p className="text-gray-300 text-xs text-center">
-            Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par Royal_Tech
+            Conçu &amp; développé avec <span className="text-[#E85D04]">♥</span> par Begoto
           </p>
         </div>
       </div>

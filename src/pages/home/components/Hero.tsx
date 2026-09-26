@@ -21,10 +21,10 @@ export default function Hero() {
           {/* Left Content */}
           <div className="flex-1 max-w-xl">
             <p className="text-[#E85D04] font-semibold text-sm uppercase tracking-widest mb-3 animate-fade-in">
-              WHO AM I?
+              Bonjour, je suis Begoto
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-              I&apos;m Developer{" "}
+              Développeur{" "}
               <span className="text-[#E85D04]">Frontend</span>
             </h1>
             <p className="text-gray-300 text-base leading-relaxed mb-8 max-w-md">
@@ -82,7 +82,7 @@ export default function Hero() {
               <div className="w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-[#2a2a2a] relative z-10">
                 <img
                   src="/assets/images/profil.w800.webp"
-                  alt="Royal_Tech - Developer Frontend"
+                  alt="Begoto, développeur frontend à Yaoundé"
                   className="w-full h-full object-cover object-top"
                   width={384}
                   height={384}

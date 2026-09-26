@@ -11,7 +11,7 @@ const projects = [
     tags: ["Next.js", "TypeScript", "TailwindCSS"],
     image: "/assets/images/project-1.jpg",
     github: "https://gitlab.com/begoto",
-    live: "#",
+    live: "",
     featured: true,
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     tags: ["HTML", "CSS", "JS"],
     image: "/assets/images/project-2.jpg",
     github: "https://github.com/begoto24",
-    live: "#",
+    live: "",
     featured: false,
   },
   {
@@ -31,7 +31,7 @@ const projects = [
     tags: ["CSS", "HTML", "JS"],
     image: "/assets/images/project-3.jpg",
     github: "https://github.com/begoto24",
-    live: "#",
+    live: "",
     featured: true,
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     tags: ["React", "TailwindCSS", "Shadcn/UI"],
     image: "/assets/images/project-4.jpg",
     github: "https://github.com/begoto24",
-    live: "#",
+    live: "https://flashcards-en-stofil.netlify.app/",
     featured: false,
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     tags: ["Nextjs", "Shadcn", "json-server"],
     image: "/assets/images/project-5.jpg",
     github: "https://github.com/begoto24",
-    live: "#",
+    live: "",
     featured: false,
   },
   {
@@ -61,7 +61,7 @@ const projects = [
     tags: ["Next.js", "postgresql", "Nodejs"],
     image: "/assets/images/project-6.jpg",
     github: "https://github.com/begoto24",
-    live: "#",
+    live: "",
     featured: false,
   },
 ];
@@ -120,15 +120,22 @@ export default function Portfolio() {
 
               {/* Image */}
               <div className="w-full h-48 overflow-hidden">
-                <img
-                    src={project.image}
-                    alt={project.title}
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet={`${project.image.replace(".jpg", ".w400.webp")} 400w, ${project.image.replace(".jpg", ".w800.webp")} 800w`}
+                    sizes="(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw"
+                  />
+                  <img
+                    src={project.image.replace(".jpg", ".w800.jpg")}
+                    alt={`Aperçu du projet ${project.title}`}
                     className="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     width={400}
                     height={192}
                     loading="lazy"
                     decoding="async"
-                />
+                  />
+                </picture>
               </div>
 
               {/* Overlay on hover */}
@@ -136,19 +143,23 @@ export default function Portfolio() {
                 <a
                   href={project.github}
                   target="_blank"
-                  rel="nofollow noopener noreferrer"
+                  rel="me noopener noreferrer"
                   aria-label={project.github.includes('gitlab') ? 'GitLab' : 'GitHub'}
                   className="w-10 h-10 flex items-center justify-center rounded-full bg-[#E85D04] text-white hover:bg-[#c94d03] transition-colors cursor-pointer"
                 >
                   <Icon name={project.github.includes('gitlab') ? 'gitlab' : 'github'} className="text-lg" />
                 </a>
-                <a
-                  href={project.live}
-                  aria-label="Voir le projet"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black hover:bg-gray-200 transition-colors cursor-pointer"
-                >
-                  <Icon name="externalLink" className="text-lg" />
-                </a>
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Voir le projet ${project.title} en ligne`}
+                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-black hover:bg-gray-200 transition-colors cursor-pointer"
+                  >
+                    <Icon name="externalLink" className="text-lg" />
+                  </a>
+                )}
               </div>
 
               {/* Info */}
@@ -174,7 +185,7 @@ export default function Portfolio() {
           <a
             href="https://github.com/begoto24"
             target="_blank"
-            rel="nofollow noopener noreferrer"
+            rel="me noopener noreferrer"
             className="inline-flex items-center gap-2 border border-[#E85D04] text-[#E85D04] hover:bg-[#E85D04] hover:text-white font-semibold px-8 py-3 rounded-md transition-all duration-200 cursor-pointer whitespace-nowrap"
           >
             <Icon name="github" className="text-base" />
